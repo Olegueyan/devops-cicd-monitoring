@@ -1,0 +1,1 @@
+2025/09/19 13:21:51 [error] 11#11: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.21.0.1, server: localhost, request: "POST /api/users HTTP/1.1", upstream: "http://127.0.0.1:8080/api/users", host: "localhost"

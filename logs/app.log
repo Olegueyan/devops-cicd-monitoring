@@ -1,0 +1,43 @@
+2025-09-19 12:46:10 [main] INFO  Application - 8080
+2025-09-19 12:46:10 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 12:46:11 [main] INFO  io.ktor.server.Application - Application started in 0.828 seconds.
+2025-09-19 12:46:11 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+2025-09-19 12:49:04 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 12:49:05 [main] INFO  io.ktor.server.Application - Application started in 0.65 seconds.
+2025-09-19 12:49:05 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+2025-09-19 12:53:25 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 12:53:25 [main] INFO  io.ktor.server.Application - Application started in 0.623 seconds.
+2025-09-19 12:53:26 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+2025-09-19 12:58:50 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 12:58:50 [main] INFO  io.ktor.server.Application - Application started in 0.811 seconds.
+2025-09-19 12:58:50 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+2025-09-19 13:00:31 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 13:00:31 [main] INFO  io.ktor.server.Application - Application started in 0.604 seconds.
+2025-09-19 13:00:32 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+2025-09-19 13:02:39 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 13:02:40 [main] INFO  io.ktor.server.Application - Application started in 0.668 seconds.
+2025-09-19 13:02:40 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+2025-09-19 13:17:16 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 13:17:16 [main] INFO  io.ktor.server.Application - Application started in 0.749 seconds.
+2025-09-19 13:17:17 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+2025-09-19 13:21:51 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 13:21:52 [main] INFO  io.ktor.server.Application - Application started in 0.623 seconds.
+2025-09-19 13:21:52 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+2025-09-19 13:23:01 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 13:23:01 [main] INFO  io.ktor.server.Application - Application started in 0.755 seconds.
+2025-09-19 13:23:01 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+2025-09-19 13:24:11 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 13:24:11 [main] INFO  io.ktor.server.Application - Application started in 0.591 seconds.
+2025-09-19 13:24:11 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+2025-09-19 13:25:09 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 13:25:09 [main] INFO  io.ktor.server.Application - Application started in 0.933 seconds.
+2025-09-19 13:25:10 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+2025-09-19 13:27:22 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 13:27:22 [main] INFO  io.ktor.server.Application - Application started in 0.647 seconds.
+2025-09-19 13:27:23 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+2025-09-19 13:32:02 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 13:32:02 [main] INFO  io.ktor.server.Application - Application started in 0.551 seconds.
+2025-09-19 13:32:03 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+2025-09-19 13:35:43 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+2025-09-19 13:35:43 [main] INFO  io.ktor.server.Application - Application started in 0.807 seconds.
+2025-09-19 13:35:44 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
