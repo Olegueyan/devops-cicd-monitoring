@@ -72,7 +72,8 @@ jobs:
         run: |
           set -eo pipefail
           echo "$GCP_SERVICE_ACCOUNT_KEY" > "$HOME/gcp-sa.json"
-          curl -sSfo cloud-sql-proxy https://dl.google.com/cloudsql/cloud-sql-proxy.linux.amd64
+          CLOUD_SQL_PROXY_VERSION="2.13.0"
+          curl -sSLo cloud-sql-proxy "https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v${CLOUD_SQL_PROXY_VERSION}/cloud-sql-proxy.linux.amd64"
           chmod +x cloud-sql-proxy
           ./cloud-sql-proxy \
             --address 127.0.0.1 \
