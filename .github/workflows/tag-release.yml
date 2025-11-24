@@ -70,8 +70,9 @@ jobs:
           set -eo pipefail
           curl -sSL https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/10.17.3/flyway-commandline-10.17.3-linux-x64.tar.gz -o flyway.tgz
           tar -xzf flyway.tgz
-          sudo mv flyway-10.17.3/flyway /usr/local/bin/flyway
-          rm -rf flyway.tgz flyway-10.17.3
+          mv flyway-10.17.3 "$HOME/flyway"
+          echo "$HOME/flyway" >> "$GITHUB_PATH"
+          rm -rf flyway.tgz
 
       - name: Run database migrations
         env:
