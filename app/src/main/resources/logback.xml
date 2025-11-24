@@ -1,21 +1,45 @@
 <configuration>
-    <!-- Console Appender -->
+    <!-- Console lisible -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Fichier Appender -->
+    <!-- Fichier JSON -->
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <file>/var/logs/crud/app.log</file>
         <append>true</append>
-        <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+
+        <!-- Encoder JSON finement contrôlable -->
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <!-- Champs de base -->
+                <timestamp>
+                    <fieldName>timestamp</fieldName>
+                </timestamp>
+                <logLevel>
+                    <fieldName>level</fieldName>
+                </logLevel>
+                <message/>
+                <!-- Renommer le logger en "source" -->
+                <loggerName>
+                    <fieldName>source</fieldName>
+                </loggerName>
+
+                <!-- Arguments structurés (StructuredArguments.kv / keyValue / value) -->
+                <arguments>
+                    <!-- On ne veut QUE les arguments structurés (le contexte), pas les non-structurés -->
+                    <includeNonStructuredArguments>false</includeNonStructuredArguments>
+                </arguments>
+
+                <jsonProvider class="net.logstash.logback.composite.GlobalCustomFieldsJsonProvider">
+                    <customFields>{"app":"ktor-crud"}</customFields>
+                </jsonProvider>
+            </providers>
         </encoder>
     </appender>
 
-    <!-- Root logger -->
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>

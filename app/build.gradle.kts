@@ -46,6 +46,8 @@ dependencies {
 
     // Logback (implémentation SLF4J)
     implementation("ch.qos.logback:logback-classic:1.5.13")
+
+    implementation("net.logstash.logback:logstash-logback-encoder:7.4")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

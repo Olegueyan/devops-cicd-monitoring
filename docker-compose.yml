@@ -44,12 +44,32 @@ services:
     image: flyway/flyway:9
     env_file:
       - .env
-    command: -url=${DB_JDBC_URL} -user=${DB_USER} -password=${DB_PASSWORD} migrate
+    command: -url=${DB_URL} -user=${DB_USER} -password=${DB_PASSWORD} migrate
     volumes:
       - ./db/migrations:/flyway/sql
     depends_on:
       - db
     restart: "no"
+
+  fluentbit:
+    image: fluent/fluent-bit:latest
+    container_name: fluentbit
+    depends_on:
+      - app
+    env_file:
+      - .env
+    volumes:
+      # Config Fluent Bit
+      - ./fluent-bit/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf:ro
+      - ./fluent-bit/parsers.conf:/fluent-bit/etc/parsers.conf:ro
+
+      # Logs Nginx de ton conteneur app (montés par app dans ./logs)
+      - ./logs:/var/logs/crud:ro
+
+      # Journaux Docker (pour capter stdout de conteneurs)
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: unless-stopped
 
 volumes:
   db_data:

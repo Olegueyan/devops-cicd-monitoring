@@ -1,43 +1,189 @@
-2025-09-19 12:46:10 [main] INFO  Application - 8080
-2025-09-19 12:46:10 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 12:46:11 [main] INFO  io.ktor.server.Application - Application started in 0.828 seconds.
-2025-09-19 12:46:11 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
-2025-09-19 12:49:04 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 12:49:05 [main] INFO  io.ktor.server.Application - Application started in 0.65 seconds.
-2025-09-19 12:49:05 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
-2025-09-19 12:53:25 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 12:53:25 [main] INFO  io.ktor.server.Application - Application started in 0.623 seconds.
-2025-09-19 12:53:26 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
-2025-09-19 12:58:50 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 12:58:50 [main] INFO  io.ktor.server.Application - Application started in 0.811 seconds.
-2025-09-19 12:58:50 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
-2025-09-19 13:00:31 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 13:00:31 [main] INFO  io.ktor.server.Application - Application started in 0.604 seconds.
-2025-09-19 13:00:32 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
-2025-09-19 13:02:39 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 13:02:40 [main] INFO  io.ktor.server.Application - Application started in 0.668 seconds.
-2025-09-19 13:02:40 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
-2025-09-19 13:17:16 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 13:17:16 [main] INFO  io.ktor.server.Application - Application started in 0.749 seconds.
-2025-09-19 13:17:17 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
-2025-09-19 13:21:51 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 13:21:52 [main] INFO  io.ktor.server.Application - Application started in 0.623 seconds.
-2025-09-19 13:21:52 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
-2025-09-19 13:23:01 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 13:23:01 [main] INFO  io.ktor.server.Application - Application started in 0.755 seconds.
-2025-09-19 13:23:01 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
-2025-09-19 13:24:11 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 13:24:11 [main] INFO  io.ktor.server.Application - Application started in 0.591 seconds.
-2025-09-19 13:24:11 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
-2025-09-19 13:25:09 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 13:25:09 [main] INFO  io.ktor.server.Application - Application started in 0.933 seconds.
-2025-09-19 13:25:10 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
-2025-09-19 13:27:22 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 13:27:22 [main] INFO  io.ktor.server.Application - Application started in 0.647 seconds.
-2025-09-19 13:27:23 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
-2025-09-19 13:32:02 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 13:32:02 [main] INFO  io.ktor.server.Application - Application started in 0.551 seconds.
-2025-09-19 13:32:03 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
-2025-09-19 13:35:43 [main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
-2025-09-19 13:35:43 [main] INFO  io.ktor.server.Application - Application started in 0.807 seconds.
-2025-09-19 13:35:44 [DefaultDispatcher-worker-1] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+{"timestamp":"2025-11-04T13:32:22.439207925Z","level":"INFO","message":"Autoreload is disabled because the development mode is off.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:32:22.612449509Z","level":"INFO","message":"Application started in 0.658 seconds.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:32:22.942792059Z","level":"INFO","message":"Responding at http://0.0.0.0:8080","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:38:10.984719683Z","level":"INFO","message":"Autoreload is disabled because the development mode is off.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:38:11.18790092Z","level":"INFO","message":"Application started in 0.811 seconds.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:38:11.524545523Z","level":"INFO","message":"Responding at http://0.0.0.0:8080","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:39:32.51673735Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T13:48:38.200744137Z","level":"INFO","message":"Autoreload is disabled because the development mode is off.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:48:38.420083791Z","level":"INFO","message":"Application started in 0.655 seconds.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:48:38.853727326Z","level":"INFO","message":"Responding at http://0.0.0.0:8080","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:48:42.632180145Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T13:49:02.502113227Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T13:49:03.669916136Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T13:51:09.078841793Z","level":"INFO","message":"Autoreload is disabled because the development mode is off.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:51:09.237079646Z","level":"INFO","message":"Application started in 0.552 seconds.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:51:09.487541834Z","level":"INFO","message":"Responding at http://0.0.0.0:8080","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:52:46.246783615Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T13:54:06.166376084Z","level":"INFO","message":"Autoreload is disabled because the development mode is off.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:54:06.349703163Z","level":"INFO","message":"Application started in 0.681 seconds.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:54:06.698329071Z","level":"INFO","message":"Responding at http://0.0.0.0:8080","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:56:30.593689244Z","level":"INFO","message":"Autoreload is disabled because the development mode is off.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:56:30.81301467Z","level":"INFO","message":"Application started in 0.64 seconds.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:56:31.242087477Z","level":"INFO","message":"Responding at http://0.0.0.0:8080","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:56:44.013151375Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T13:57:01.317078461Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T13:57:38.707444506Z","level":"INFO","message":"Autoreload is disabled because the development mode is off.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:57:38.8809326Z","level":"INFO","message":"Application started in 0.588 seconds.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:57:39.216045168Z","level":"INFO","message":"Responding at http://0.0.0.0:8080","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:59:48.093838697Z","level":"INFO","message":"Autoreload is disabled because the development mode is off.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:59:48.466892904Z","level":"INFO","message":"Application started in 1.101 seconds.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T13:59:48.883777793Z","level":"INFO","message":"Responding at http://0.0.0.0:8080","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T14:01:28.860862957Z","level":"INFO","message":"Autoreload is disabled because the development mode is off.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T14:01:29.033514398Z","level":"INFO","message":"Application started in 0.582 seconds.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T14:01:29.267454914Z","level":"INFO","message":"Responding at http://0.0.0.0:8080","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T14:03:15.401647681Z","level":"INFO","message":"Autoreload is disabled because the development mode is off.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T14:03:15.64057171Z","level":"INFO","message":"Application started in 0.705 seconds.","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T14:03:15.905909767Z","level":"INFO","message":"Responding at http://0.0.0.0:8080","source":"io.ktor.server.Application"}
+{"timestamp":"2025-11-04T14:03:21.881963088Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:03:23.778402228Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:03:28.006987007Z","level":"INFO","message":"[GET /api/users] Returned 1 users","source":"UserRoutes","context":{"route":"/api/users","method":"GET","count":1}}
+{"timestamp":"2025-11-04T14:13:21.905081511Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:17:03.251884107Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:17:03.999359721Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:17:04.662840931Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:17:10.009425662Z","level":"INFO","message":"[GET /api/users] Returned 1 users","source":"UserRoutes","context":{"route":"/api/users","method":"GET","count":1}}
+{"timestamp":"2025-11-04T14:20:48.664451837Z","level":"INFO","message":"[GET /api/users] Returned 1 users","source":"UserRoutes","context":{"route":"/api/users","method":"GET","count":1}}
+{"timestamp":"2025-11-04T14:20:51.764411152Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:20:54.982129001Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:20:55.3474538Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:20:56.170738001Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:32:30.490861545Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:32:30.755863044Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:32:31.220588227Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:32:31.567588982Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:32:31.877147906Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:32:32.182112632Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:32:32.462317068Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:32:32.745994758Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:32:32.985234841Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:35:08.013672531Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:35:08.369861418Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:35:08.743685428Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:35:09.091916997Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:35:09.4048356Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:35:09.801844275Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:35:10.089138884Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:35:10.428472466Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:06.33035196Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:06.766499021Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:07.138009661Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:07.509692741Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:07.861346594Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:08.217228854Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:08.558370847Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:08.906941396Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:09.257042393Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:14.991707903Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:15.333112438Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:15.495573145Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:15.748163912Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:16.093603733Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:39:16.329850919Z","level":"WARN","message":"[404] Route not found: /a","source":"Application"}
+{"timestamp":"2025-11-04T14:40:55.504301974Z","level":"INFO","message":"[GET /api/users] Returned 1 users","source":"UserRoutes","context":{"route":"/api/users","method":"GET","count":1}}
+{"timestamp":"2025-11-04T14:41:00.299042679Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:41:01.404597757Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:41:02.454605567Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:41:04.181927172Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:41:04.739732657Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:41:05.161924584Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:41:05.611428082Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:41:06.375194904Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:41:06.984968367Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:50:26.125440807Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:50:26.552641418Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:50:26.983458046Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:50:27.397661291Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:50:27.792825868Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:50:28.136848673Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:50:28.523274164Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:50:28.86896086Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:50:29.205191778Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:50:29.506051194Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:50:29.79767826Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:50:30.103372971Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:55:05.857532809Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:55:06.238397172Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:55:06.621264158Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:55:07.028628387Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:55:07.403812368Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:55:07.785838898Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:55:08.15171468Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:55:08.530430599Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:36.56477238Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:37.057790063Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:37.573222262Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:38.047896691Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:38.532824109Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:39.020305722Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:39.548959007Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:40.015624563Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:40.470345555Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:40.892246502Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:41.236533806Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:41.580916731Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:42.008455181Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T14:59:42.51061968Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:20.520507373Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:21.637035907Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:23.464743272Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:23.799132002Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:24.253672768Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:24.619373549Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:25.002484167Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:25.441321527Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:25.682525665Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:25.817911203Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:26.073299537Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:26.375462716Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:26.586066971Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:26.797327751Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:27.008283079Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:27.324107443Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:05:27.505589512Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:08:12.043097681Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:08:12.413540816Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:08:12.606348481Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:08:12.778284033Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:08:12.919187767Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:08:13.174057381Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:08:13.303923103Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:08:13.44060737Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:08:13.735855392Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:08:13.864992006Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:09:22.321325511Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:09:22.52129448Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:09:22.726028383Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:09:22.933225621Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:09:23.140240062Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:09:23.34646234Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:09:23.553838086Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:46.044432349Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:46.243611712Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:46.450668576Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:46.659181303Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:46.869948782Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:47.073413878Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:47.28073248Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:47.488655707Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:47.696351965Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:47.903551145Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:48.111326687Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:48.800143757Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:49.460130999Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:50.232908494Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:50.676022347Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:52.984968441Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:53.657768874Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:54.351363685Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:55.136245809Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:55.669575343Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:56.257605081Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T15:43:56.467969132Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T16:34:06.935104317Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T16:34:07.361591273Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T16:34:07.884922359Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T16:34:08.372985489Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T16:34:08.827795517Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T16:34:09.311900794Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
+{"timestamp":"2025-11-04T16:34:09.842405644Z","level":"WARN","message":"[404] Route not found: /coucou","source":"Application"}
