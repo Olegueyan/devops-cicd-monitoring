@@ -11,6 +11,7 @@ permissions:
 jobs:
   build-and-push-images:
     runs-on: ubuntu-latest
+    environment: devops-cicd-monitoring-environment
     env:
       DOCKER_IMAGE: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/devops-cicd-monitoring
       FLUENT_BIT_IMAGE: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/devops-cicd-monitoring-fluent-bit
@@ -58,6 +59,7 @@ jobs:
 
   run-migrations:
     runs-on: ubuntu-latest
+    environment: devops-cicd-monitoring-environment
     needs: build-and-push-images
     steps:
       - name: Checkout code
@@ -88,6 +90,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    environment: devops-cicd-monitoring-environment
     needs: run-migrations
     env:
       SERVICE_NAME: ktor-crud
