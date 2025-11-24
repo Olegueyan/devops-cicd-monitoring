@@ -65,6 +65,29 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Start Cloud SQL Proxy
+        env:
+          CONNECTION_NAME: devops-cicd-monitoring:europe-west1:mon-instance-mysql
+          GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+        run: |
+          set -eo pipefail
+          echo "$GCP_SERVICE_ACCOUNT_KEY" > "$HOME/gcp-sa.json"
+          curl -sSfo cloud-sql-proxy https://dl.google.com/cloudsql/cloud-sql-proxy.linux.amd64
+          chmod +x cloud-sql-proxy
+          ./cloud-sql-proxy \
+            --address 127.0.0.1 \
+            --port 3306 \
+            "$CONNECTION_NAME" \
+            --credentials-file="$HOME/gcp-sa.json" &
+          for i in {1..10}; do
+            if (echo > /dev/tcp/127.0.0.1/3306) >/dev/null 2>&1; then
+              echo "Cloud SQL Proxy is ready"
+              break
+            fi
+            echo "Waiting for Cloud SQL Proxy..."
+            sleep 2
+          done
+
       - name: Install MySQL client
         run: |
           sudo apt-get update
@@ -72,14 +95,13 @@ jobs:
 
       - name: Ensure database exists
         env:
-          DB_HOST: ${{ secrets.DB_HOST }}
-          DB_PORT: ${{ secrets.DB_PORT }}
           DB_NAME: ${{ secrets.DB_NAME }}
           DB_USER: ${{ secrets.DB_USER }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_PORT: ${{ secrets.DB_PORT }}
         run: |
           set -eo pipefail
-          mysql --host="$DB_HOST" --port="$DB_PORT" --user="$DB_USER" --password="$DB_PASSWORD" \
+          mysql --host=127.0.0.1 --port="$DB_PORT" --user="$DB_USER" --password="$DB_PASSWORD" \
             --execute="CREATE DATABASE IF NOT EXISTS \`$DB_NAME\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 
       - name: Install Flyway CLI
@@ -93,7 +115,7 @@ jobs:
 
       - name: Run database migrations
         env:
-          FLYWAY_URL: jdbc:mariadb://${{ secrets.DB_HOST }}:${{ secrets.DB_PORT }}/${{ secrets.DB_NAME }}
+          FLYWAY_URL: jdbc:mariadb://127.0.0.1:${{ secrets.DB_PORT }}/${{ secrets.DB_NAME }}
           FLYWAY_USER: ${{ secrets.DB_USER }}
           FLYWAY_PASSWORD: ${{ secrets.DB_PASSWORD }}
         run: |
