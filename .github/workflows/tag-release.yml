@@ -177,25 +177,10 @@ jobs:
           fi
           envsubst < cloud-run-service.yaml > rendered-cloud-run.yaml
 
-      - name: Render Fluent Bit Cloud Run manifest
-        env:
-          FLUENT_SERVICE_NAME: ${{ env.FLUENT_SERVICE_NAME }}
-          FLUENT_BIT_IMAGE: ${{ env.FLUENT_BIT_IMAGE }}:${{ steps.release.outputs.release_tag }}
-          APP_NAME: ${{ env.SERVICE_NAME }}
-          PROJECT_ID: ${{ env.PROJECT_ID }}
-          REGION: ${{ env.REGION }}
-          LOKI_HOST: ${{ secrets.LOKI_HOST }}
-          LOKI_PORT: ${{ secrets.LOKI_PORT }}
-          VPC_NETWORK: ${{ env.VPC_NETWORK }}
-        run: |
-          set -eo pipefail
-          envsubst < cloud-run-fluent-bit.yaml > rendered-cloud-run-fluentbit.yaml
-
       - name: Deploy to Cloud Run
         run: |
           set -eo pipefail
           gcloud run services replace rendered-cloud-run.yaml --region "${REGION}" --project "${PROJECT_ID}"
-          gcloud run services replace rendered-cloud-run-fluentbit.yaml --region "${REGION}" --project "${PROJECT_ID}"
 
       - name: Allow unauthenticated invocations
         run: |
