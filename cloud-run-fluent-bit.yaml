@@ -1,0 +1,33 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: ${FLUENT_SERVICE_NAME}
+  labels:
+    gcp-project-id: ${PROJECT_ID}
+    gcp-region: ${REGION}
+  annotations:
+    run.googleapis.com/ingress: all
+    run.googleapis.com/client-name: github-actions
+spec:
+  traffic:
+    - percent: 100
+      latestRevision: true
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: "3"
+        autoscaling.knative.dev/minScale: "0"
+        run.googleapis.com/client-name: github-actions
+        run.googleapis.com/network-interfaces: '[{"network":"${VPC_NETWORK}"}]'
+    spec:
+      containerConcurrency: 10
+      timeoutSeconds: 300
+      containers:
+        - image: ${FLUENT_BIT_IMAGE}
+          env:
+            - name: APP_NAME
+              value: ${APP_NAME}
+            - name: LOKI_HOST
+              value: ${LOKI_HOST}
+            - name: LOKI_PORT
+              value: ${LOKI_PORT}

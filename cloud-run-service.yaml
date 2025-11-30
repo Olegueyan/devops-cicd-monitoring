@@ -18,6 +18,7 @@ spec:
         autoscaling.knative.dev/maxScale: "5"
         autoscaling.knative.dev/minScale: "0"
         run.googleapis.com/client-name: github-actions
+        run.googleapis.com/network-interfaces: '[{"network":"${VPC_NETWORK}"}]'
     spec:
       containerConcurrency: 80
       timeoutSeconds: 300
