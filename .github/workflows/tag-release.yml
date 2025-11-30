@@ -85,8 +85,10 @@ jobs:
           echo "$GCP_SERVICE_ACCOUNT_KEY" > "$HOME/gcp-sa.json"
           CLOUD_SQL_PROXY_VERSION="2.9.0"
           mkdir -p /tmp/cloudsql
+          chmod 777 /tmp/cloudsql
           docker rm -f cloud-sql-proxy >/dev/null 2>&1 || true
           docker run -d --name cloud-sql-proxy \
+            --user 0:0 \
             -v "$HOME/gcp-sa.json:/config/gcp-sa.json:ro" \
             -v /tmp/cloudsql:/cloudsql \
             gcr.io/cloud-sql-connectors/cloud-sql-proxy:${CLOUD_SQL_PROXY_VERSION} \
