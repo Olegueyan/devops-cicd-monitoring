@@ -18,7 +18,11 @@ spec:
         autoscaling.knative.dev/maxScale: "5"
         autoscaling.knative.dev/minScale: "0"
         run.googleapis.com/client-name: "github-actions"
-        run.googleapis.com/network-interfaces: '[{"network":"${VPC_NETWORK}"}]'
+        run.googleapis.com/network-interfaces: >-
+          [{
+            "network":"projects/devops-cicd-monitoring/global/networks/my-vpc",
+            "subnetwork":"projects/devops-cicd-monitoring/regions/europe-west1/subnetworks/my-subnet"
+          }]
     spec:
       serviceAccountName: devops-cicd-monitoring-sa@devops-cicd-monitoring.iam.gserviceaccount.com
       containerConcurrency: 80
