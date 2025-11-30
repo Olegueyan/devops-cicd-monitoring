@@ -61,6 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: devops-cicd-monitoring-environment
     needs: build-and-push-images
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -70,102 +71,34 @@ jobs:
         with:
           credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
 
-      - name: Set up gcloud
-        uses: google-github-actions/setup-gcloud@v2
-        with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-
-      - name: Start Cloud SQL Auth Proxy (Docker)
-        env:
-          INSTANCE_CONNECTION_NAME: ${{ secrets.INSTANCE_CONNECTION_NAME }}
-          GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
-          DB_PORT: ${{ secrets.DB_PORT }}
+      - name: Create service account key file
         run: |
-          set -eo pipefail
-          echo "$GCP_SERVICE_ACCOUNT_KEY" > "$HOME/gcp-sa.json"
-          CLOUD_SQL_PROXY_VERSION="2.9.0"
-          mkdir -p /tmp/cloudsql
-          chmod 777 /tmp/cloudsql
-          docker rm -f cloud-sql-proxy >/dev/null 2>&1 || true
-          docker run -d --name cloud-sql-proxy \
-            --user 0:0 \
-            -v "$HOME/gcp-sa.json:/config/gcp-sa.json:ro" \
-            -v /tmp/cloudsql:/cloudsql \
-            gcr.io/cloud-sql-connectors/cloud-sql-proxy:${CLOUD_SQL_PROXY_VERSION} \
-              "$INSTANCE_CONNECTION_NAME" \
-              --unix-socket /cloudsql \
-              --credentials-file=/config/gcp-sa.json
-          # attendre que le socket unix soit actif
-          for i in {1..10}; do
-            if [ -S "/tmp/cloudsql/$INSTANCE_CONNECTION_NAME" ]; then
-              echo "Cloud SQL Proxy is ready (socket)"
-              break
-            fi
-            echo "Waiting for Cloud SQL Proxy socket..."
-            sleep 2
-          done
-          if [ ! -S "/tmp/cloudsql/$INSTANCE_CONNECTION_NAME" ]; then
-            echo "Cloud SQL Proxy socket not found. Logs:"
-            docker logs cloud-sql-proxy || true
-            exit 1
-          fi
+          echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > ./sa.json
 
-      - name: Install MySQL client
+      - name: Start Cloud SQL Proxy via Docker
         run: |
-          sudo apt-get update
-          sudo apt-get install -y mysql-client
+          docker run -d \
+            --name cloudsql-proxy \
+            -p 3306:3306 \
+            -v $PWD/sa.json:/config/sa.json \
+            gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.11.0 \
+              ${{ secrets.INSTANCE_CONNECTION_NAME }} \
+              --credentials-file=/config/sa.json \
+              --port=3306
 
-      - name: Ensure database exists
-        env:
-          DB_NAME: ${{ secrets.DB_NAME }}
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          DB_PORT: ${{ secrets.DB_PORT }}
-          INSTANCE_CONNECTION_NAME: ${{ secrets.INSTANCE_CONNECTION_NAME }}
-        run: |
-          set -eo pipefail
-          MYSQL_PWD="$DB_PASSWORD" mysql --protocol=SOCKET --socket="/tmp/cloudsql/$INSTANCE_CONNECTION_NAME" \
-            --user="$DB_USER" \
-            --execute="CREATE DATABASE IF NOT EXISTS \`$DB_NAME\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+          # Wait for proxy to start
+          sleep 5
 
-      - name: Ensure users table exists
-        env:
-          DB_NAME: ${{ secrets.DB_NAME }}
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          DB_PORT: ${{ secrets.DB_PORT }}
-          INSTANCE_CONNECTION_NAME: ${{ secrets.INSTANCE_CONNECTION_NAME }}
+      - name: Run Flyway migrations (Docker)
         run: |
-          set -eo pipefail
-          MYSQL_PWD="$DB_PASSWORD" mysql --protocol=SOCKET --socket="/tmp/cloudsql/$INSTANCE_CONNECTION_NAME" \
-            --user="$DB_USER" \
-            --database="$DB_NAME" \
-            --execute="CREATE TABLE IF NOT EXISTS users (uuid CHAR(36) NOT NULL PRIMARY KEY, fullname VARCHAR(255) NOT NULL, study_level VARCHAR(255) NOT NULL, age INT NOT NULL);"
-
-      - name: Install Flyway CLI
-        run: |
-          set -eo pipefail
-          curl -sSL https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/10.17.3/flyway-commandline-10.17.3-linux-x64.tar.gz -o flyway.tgz
-          tar -xzf flyway.tgz
-          mv flyway-10.17.3 "$HOME/flyway"
-          echo "$HOME/flyway" >> "$GITHUB_PATH"
-          rm -rf flyway.tgz
-
-      - name: Run database migrations
-        env:
-          FLYWAY_URL: jdbc:mariadb://localhost:/${{ secrets.DB_NAME }}?socket=/tmp/cloudsql/${{ secrets.INSTANCE_CONNECTION_NAME }}
-          FLYWAY_USER: ${{ secrets.DB_USER }}
-          FLYWAY_PASSWORD: ${{ secrets.DB_PASSWORD }}
-          INSTANCE_CONNECTION_NAME: ${{ secrets.INSTANCE_CONNECTION_NAME }}
-        run: |
-          set -eo pipefail
-          flyway \
-            -url="$FLYWAY_URL" \
-            -user="$FLYWAY_USER" \
-            -password="$FLYWAY_PASSWORD" \
-            -locations=filesystem:db/migrations \
-            -connectRetries=30 \
-            migrate
+          docker run --rm \
+            --network host \
+            -v $PWD/sql:/flyway/sql \
+            flyway/flyway:11-alpine \
+              -url="jdbc:mysql://127.0.0.1:3306/${{ secrets.DB_NAME }}?useSSL=false" \
+              -user="${{ secrets.DB_USER }}" \
+              -password="${{ secrets.DB_PASSWORD }}" \
+              migrate
 
   deploy:
     runs-on: ubuntu-latest
