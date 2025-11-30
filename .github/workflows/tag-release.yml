@@ -72,24 +72,31 @@ jobs:
           credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
 
       - name: Create service account key file
+        shell: bash
         run: |
-          echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > ./sa.json
+          echo '${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}' > sa.json
 
-      - name: Start Cloud SQL Proxy via Docker
+      - name: Start Cloud SQL Proxy (Docker)
+        shell: bash
         run: |
           docker run -d \
             --name cloudsql-proxy \
-            -p 3306:3306 \
+            --network host \
             -v $PWD/sa.json:/config/sa.json \
             gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.11.0 \
-              ${{ secrets.INSTANCE_CONNECTION_NAME }} \
+              "${{ secrets.INSTANCE_CONNECTION_NAME }}" \
               --credentials-file=/config/sa.json \
               --port=3306
 
-          # Wait for proxy to start
-          sleep 5
+          # Wait until the proxy is listening on port 3306
+          for i in {1..20}; do
+            nc -z 127.0.0.1 3306 && echo "Proxy is up" && break;
+            echo "Waiting for Cloud SQL Proxy..."
+            sleep 1
+          done
 
       - name: Run Flyway migrations (Docker)
+        shell: bash
         run: |
           docker run --rm \
             --network host \
