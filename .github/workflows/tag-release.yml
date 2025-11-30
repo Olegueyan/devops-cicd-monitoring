@@ -95,6 +95,18 @@ jobs:
             sleep 1
           done
 
+      - name: Create database if not exists
+        run: |
+          docker run --rm \
+            --network host \
+            mysql:8 \
+              mysql \
+                --host=127.0.0.1 \
+                --port=3306 \
+                --user="${{ secrets.DB_USER }}" \
+                --password="${{ secrets.DB_PASSWORD }}" \
+                -e "CREATE DATABASE IF NOT EXISTS \`${{ secrets.DB_NAME }}\` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+
       - name: Run Flyway migrations (Docker)
         shell: bash
         run: |
