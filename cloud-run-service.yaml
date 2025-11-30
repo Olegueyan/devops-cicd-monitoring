@@ -1,13 +1,13 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: ${SERVICE_NAME}
+  name: "${SERVICE_NAME}"
   labels:
-    gcp-project-id: ${PROJECT_ID}
-    gcp-region: ${REGION}
+    gcp-project-id: "${PROJECT_ID}"
+    gcp-region: "${REGION}"
   annotations:
-    run.googleapis.com/ingress: all
-    run.googleapis.com/client-name: github-actions
+    run.googleapis.com/ingress: "all"
+    run.googleapis.com/client-name: "github-actions"
 spec:
   traffic:
     - percent: 100
@@ -17,41 +17,41 @@ spec:
       annotations:
         autoscaling.knative.dev/maxScale: "5"
         autoscaling.knative.dev/minScale: "0"
-        run.googleapis.com/client-name: github-actions
+        run.googleapis.com/client-name: "github-actions"
         run.googleapis.com/network-interfaces: '[{"network":"${VPC_NETWORK}"}]'
     spec:
       containerConcurrency: 80
       timeoutSeconds: 300
       containers:
-        - image: ${IMAGE}
+        - image: "${IMAGE}"
           ports:
             - containerPort: 80
           env:
             - name: DOCKERHUB_USERNAME
-              value: ${DOCKERHUB_USERNAME}
+              value: "${DOCKERHUB_USERNAME}"
             - name: APP_NAME
-              value: ${SERVICE_NAME}
+              value: "${SERVICE_NAME}"
             - name: APP_PORT
               value: "8080"
             - name: VERSION
-              value: ${RELEASE_TAG}
+              value: "${RELEASE_TAG}"
             - name: DB_HOST
-              value: ${DB_HOST}
+              value: "${DB_HOST}"
             - name: DB_PORT
-              value: ${DB_PORT}
+              value: "${DB_PORT}"
             - name: DB_NAME
-              value: ${DB_NAME}
+              value: "${DB_NAME}"
             - name: DB_USER
-              value: ${DB_USER}
+              value: "${DB_USER}"
             - name: DB_PASSWORD
-              value: ${DB_PASSWORD}
+              value: "${DB_PASSWORD}"
             - name: DB_JDBC_URL
-              value: ${DB_JDBC_URL}
+              value: "${DB_JDBC_URL}"
             - name: DB_URL
-              value: ${DB_HOST}
+              value: "${DB_HOST}"
             - name: LOKI_HOST
-              value: ${LOKI_HOST}
+              value: "${LOKI_HOST}"
             - name: LOKI_PORT
-              value: ${LOKI_PORT}
+              value: "${LOKI_PORT}"
             - name: LOKI_URL
-              value: ${LOKI_URL}
+              value: "${LOKI_URL}"

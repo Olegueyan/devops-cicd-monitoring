@@ -112,7 +112,7 @@ jobs:
         run: |
           docker run --rm \
             --network host \
-            -v $PWD/sql:/flyway/sql \
+            -v $PWD/db/migrations:/flyway/sql \
             flyway/flyway:11-alpine \
               -url="jdbc:mysql://127.0.0.1:3306/${{ secrets.DB_NAME }}?useSSL=false&allowPublicKeyRetrieval=true" \
               -user="${{ secrets.DB_USER }}" \
