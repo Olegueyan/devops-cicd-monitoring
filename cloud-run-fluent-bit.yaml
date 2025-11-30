@@ -20,6 +20,7 @@ spec:
         run.googleapis.com/client-name: github-actions
         run.googleapis.com/network-interfaces: '[{"network":"${VPC_NETWORK}"}]'
     spec:
+      serviceAccountName: devops-cicd-monitoring-sa@devops-cicd-monitoring.iam.gserviceaccount.com
       containerConcurrency: 10
       timeoutSeconds: 300
       containers:
