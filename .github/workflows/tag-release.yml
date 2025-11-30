@@ -96,15 +96,20 @@ jobs:
               --port $DB_PORT \
               --unix-socket /cloudsql \
               --credentials-file=/config/gcp-sa.json
-          # attendre que le port soit actif
+          # attendre que le socket unix et le port TCP soient actifs
           for i in {1..10}; do
-            if (echo > /dev/tcp/127.0.0.1/$DB_PORT) >/dev/null 2>&1; then
-              echo "Cloud SQL Proxy is ready"
+            if [ -S "/tmp/cloudsql/$INSTANCE_CONNECTION_NAME" ] && (echo > /dev/tcp/127.0.0.1/$DB_PORT) >/dev/null 2>&1; then
+              echo "Cloud SQL Proxy is ready (socket + TCP)"
               break
             fi
-            echo "Waiting for Cloud SQL Proxy..."
+            echo "Waiting for Cloud SQL Proxy socket..."
             sleep 2
           done
+          if [ ! -S "/tmp/cloudsql/$INSTANCE_CONNECTION_NAME" ]; then
+            echo "Cloud SQL Proxy socket not found. Logs:"
+            docker logs cloud-sql-proxy || true
+            exit 1
+          fi
 
       - name: Install MySQL client
         run: |
@@ -120,8 +125,8 @@ jobs:
           INSTANCE_CONNECTION_NAME: ${{ secrets.INSTANCE_CONNECTION_NAME }}
         run: |
           set -eo pipefail
-          mysql --socket="/tmp/cloudsql/$INSTANCE_CONNECTION_NAME" \
-            --user="$DB_USER" --password="$DB_PASSWORD" \
+          MYSQL_PWD="$DB_PASSWORD" mysql --protocol=SOCKET --socket="/tmp/cloudsql/$INSTANCE_CONNECTION_NAME" \
+            --user="$DB_USER" \
             --execute="CREATE DATABASE IF NOT EXISTS \`$DB_NAME\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 
       - name: Ensure users table exists
@@ -133,8 +138,8 @@ jobs:
           INSTANCE_CONNECTION_NAME: ${{ secrets.INSTANCE_CONNECTION_NAME }}
         run: |
           set -eo pipefail
-          mysql --socket="/tmp/cloudsql/$INSTANCE_CONNECTION_NAME" \
-            --user="$DB_USER" --password="$DB_PASSWORD" \
+          MYSQL_PWD="$DB_PASSWORD" mysql --protocol=SOCKET --socket="/tmp/cloudsql/$INSTANCE_CONNECTION_NAME" \
+            --user="$DB_USER" \
             --database="$DB_NAME" \
             --execute="CREATE TABLE IF NOT EXISTS users (uuid CHAR(36) NOT NULL PRIMARY KEY, fullname VARCHAR(255) NOT NULL, study_level VARCHAR(255) NOT NULL, age INT NOT NULL);"
 
@@ -152,6 +157,7 @@ jobs:
           FLYWAY_URL: jdbc:mariadb://127.0.0.1:${{ secrets.DB_PORT }}/${{ secrets.DB_NAME }}?allowPublicKeyRetrieval=true&useSSL=false
           FLYWAY_USER: ${{ secrets.DB_USER }}
           FLYWAY_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          INSTANCE_CONNECTION_NAME: ${{ secrets.INSTANCE_CONNECTION_NAME }}
         run: |
           set -eo pipefail
           flyway \
