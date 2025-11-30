@@ -30,7 +30,7 @@ spec:
       containers:
         - image: "${IMAGE}"
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           env:
             - name: DOCKERHUB_USERNAME
               value: "${DOCKERHUB_USERNAME}"
@@ -60,3 +60,5 @@ spec:
               value: "${LOKI_PORT}"
             - name: LOKI_URL
               value: "${LOKI_URL}"
+            - name: DISABLE_NGINX
+              value: "true"
