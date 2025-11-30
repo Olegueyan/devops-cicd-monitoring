@@ -40,6 +40,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
     implementation("org.mariadb.jdbc:mariadb-java-client:3.1.4")
+    implementation("mysql:mysql-connector-j:8.3.0")
 
     // SLF4J API
     implementation("org.slf4j:slf4j-api:2.0.9")
