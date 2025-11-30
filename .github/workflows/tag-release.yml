@@ -169,9 +169,9 @@ jobs:
           LOKI_PORT: ${{ secrets.LOKI_PORT }}
           LOKI_URL: ${{ secrets.LOKI_URL }}
           VPC_NETWORK: ${{ env.VPC_NETWORK }}
+          DB_JDBC_URL: ${{ secrets.DB_JDBC_URL }}
         run: |
           set -eo pipefail
-          export DB_JDBC_URL="jdbc:mariadb://${DB_HOST}:${DB_PORT}/${DB_NAME}"
           if [ -z "${LOKI_URL}" ]; then
             export LOKI_URL="http://${LOKI_HOST}:${LOKI_PORT}"
           fi
